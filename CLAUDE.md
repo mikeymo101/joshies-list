@@ -194,3 +194,40 @@ Preserved from the initial planning phase — read if you need context for why s
 - `.env.vercel-check` — unclear purpose; inspect and decide if it should be in `.gitignore`.
 - `/api/v1/` is documented-by-existence only. Worth a proper README if external integrations are planned.
 - No CI/CD defined in repo (Vercel handles deploy on push, but no lint/type-check gate).
+
+---
+
+## 🎯 Next session — start here
+
+### 🔴 First: scrub expired Vercel token from git history
+
+An expired Vercel OIDC token is sitting in commit `b606feb` (the big "3 weeks of dev work" commit). Token expired March 29, 2026 — already useless — but it's hygiene-level bad to leave credentials in public git history.
+
+**Scrub it with `git filter-repo`:**
+
+1. Install: `brew install git-filter-repo`
+2. From this project: `git filter-repo --path .env.vercel-check --invert-paths`
+3. Re-add remote (filter-repo removes it): `git remote add origin https://github.com/mikeymo101/joshies-list.git`
+4. Force-push: `git push origin main --force`
+
+**Caveats:**
+- Rewrites history — if you have collaborators, coordinate first (you don't currently)
+- Old commit hashes change — any external references to specific commits break
+- Can't undo easily — consider a `git clone` backup first: `cp -r ~/Projects/joshies-list ~/Desktop/joshies-list-BACKUP-before-scrub`
+
+### 🟡 Then: production readiness work (in priority order)
+
+1. **Add tests for critical paths** (biggest risk)
+   - `lib/score-engine.ts` — weighted score calc
+   - Review submission flow (API + client)
+   - Auth middleware edges (public pages, API bypass)
+   - Suggested stack: Vitest + @testing-library/react + Supabase local for integration
+
+2. **Set up CI/CD gates** (prevent regressions)
+   - GitHub Action on PR: `npm run lint` + `tsc --noEmit` + `npm test`
+   - Vercel already handles deploy on push to main
+   - Gate merges on the Action passing
+
+3. **Future enhancements**
+   - No README specific to this project yet (the generic Next.js one is still at root)
+   - `/api/v1/` is public but undocumented — worth a proper API doc if external integrations are planned
