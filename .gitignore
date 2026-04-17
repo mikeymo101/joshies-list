@@ -31,6 +31,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Vercel OIDC tokens (auto-regenerated, expire quickly, never commit)
+.env.vercel-check
+.env.*.check
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
