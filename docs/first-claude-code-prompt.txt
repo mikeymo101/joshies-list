@@ -1,0 +1,93 @@
+JOSHIE'S LIST — FIRST CLAUDE CODE SESSION PROMPT
+=================================================
+Copy everything below this line and paste it into Claude Code.
+=================================================
+
+I'm building a web app called Joshie's List — a platform where contractors 
+can look up and rate clients before accepting jobs. It is the reverse of 
+Angie's List.
+
+Please set up a Next.js 14 project using the App Router with TypeScript and 
+Tailwind CSS. Connect it to Supabase for auth and database. Install all 
+dependencies.
+
+Use this exact file structure:
+
+joshies-list/
+├── app/
+│   ├── (auth)/
+│   │   ├── login/page.tsx
+│   │   ├── signup/page.tsx
+│   │   └── reset-password/page.tsx
+│   ├── (onboarding)/
+│   │   └── onboarding/
+│   │       ├── page.tsx
+│   │       ├── step-1-account.tsx
+│   │       ├── step-2-business.tsx
+│   │       ├── step-3-verification.tsx
+│   │       ├── step-4-license.tsx
+│   │       └── step-5-seed-jobs.tsx
+│   ├── (app)/
+│   │   ├── dashboard/page.tsx
+│   │   ├── search/page.tsx
+│   │   ├── clients/[id]/page.tsx
+│   │   ├── review/[clientId]/page.tsx
+│   │   └── account/page.tsx
+│   ├── admin/
+│   │   ├── page.tsx
+│   │   ├── verifications/page.tsx
+│   │   └── contractors/page.tsx
+│   ├── api/
+│   │   ├── auth/signup/route.ts
+│   │   ├── auth/login/route.ts
+│   │   ├── auth/logout/route.ts
+│   │   ├── auth/reset-password/route.ts
+│   │   ├── onboarding/business/route.ts
+│   │   ├── onboarding/verification/route.ts
+│   │   ├── onboarding/seed-jobs/route.ts
+│   │   ├── onboarding/invite-code/route.ts
+│   │   ├── clients/route.ts
+│   │   ├── clients/search/route.ts
+│   │   ├── clients/[id]/route.ts
+│   │   ├── reviews/route.ts
+│   │   ├── reviews/check/[clientId]/route.ts
+│   │   ├── scores/recalculate/[clientId]/route.ts
+│   │   ├── payments/checkout/route.ts
+│   │   ├── payments/webhook/route.ts
+│   │   ├── admin/verifications/route.ts
+│   │   ├── admin/verifications/[id]/route.ts
+│   │   ├── admin/contractors/route.ts
+│   │   ├── admin/contractors/[id]/route.ts
+│   │   └── admin/stats/route.ts
+│   └── layout.tsx
+├── components/
+│   ├── ui/Button.tsx
+│   ├── ui/Input.tsx
+│   ├── ui/Badge.tsx
+│   ├── ui/ScoreBar.tsx
+│   ├── ClientCard.tsx
+│   ├── ReviewForm.tsx
+│   ├── ScoreBreakdown.tsx
+│   └── VerificationStatus.tsx
+├── lib/
+│   ├── supabase/client.ts
+│   ├── supabase/server.ts
+│   ├── score-engine.ts
+│   ├── stripe.ts
+│   └── resend.ts
+├── middleware.ts
+├── types/index.ts
+├── .env.local
+└── supabase/schema.sql
+
+Create all files and folders. Leave page and route files with a basic 
+placeholder (just export default function + component name). 
+
+Also:
+1. Create supabase/schema.sql — I will paste the schema separately
+2. Create .env.local with all variable names empty (no values)
+3. Create lib/score-engine.ts with the scoring logic — I will paste it
+4. Add @supabase/supabase-js, @supabase/ssr, stripe, resend, and 
+   @stripe/stripe-js to package.json
+
+Confirm it runs on localhost:3000 before finishing.
