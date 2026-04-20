@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Surfaces */
+  --surface-canvas: #0a0a0f;
+  --surface-raised: #12121a;
+  --surface-inset:  #1a1a24;
+
+  /* Canonical brand ramp — mirror of tailwind.config.ts `brand.*`.
+     We keep this here so raw CSS (scrollbars, selection, glass borders)
+     can reference the same hexes without touching Tailwind. */
+  --brand-400: #fbbf24;
+  --brand-500: #f59e0b;
+  --brand-600: #d97706;
+
+  /* Glass morphism — all derived from brand, so the page reads as one warm */
+  --glass-light:        rgba(245, 158, 11, 0.05);
+  --glass-medium:       rgba(245, 158, 11, 0.08);
+  --glass-border:       rgba(245, 158, 11, 0.18);
+  --glass-border-strong:rgba(245, 158, 11, 0.30);
+
+  /* Grade colors — match tailwind `grade.*` */
+  --grade-a: #10b981;
+  --grade-b: #3b82f6;
+  --grade-c: #f59e0b;
+  --grade-d: #f97316;
+  --grade-f: #ef4444;
+}
+
+@layer base {
+  body {
+    background: var(--surface-canvas);
+    color: rgba(255, 255, 255, 0.95);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(245, 158, 11, 0.30);
+    color: white;
+  }
+}
+
+/* Premium background effect — now brand-tinted, not a second orange */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, nav, aside, header, footer, section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrollbar — matches brand */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(245, 158, 11, 0.03); }
+::-webkit-scrollbar-thumb { background: rgba(245, 158, 11, 0.18); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.30); }
+
+@layer components {
+  .glass-card {
+    background: var(--glass-light);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: var(--glass-medium);
+    border-color: var(--glass-border-strong);
+    transform: translateY(-2px);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+  }
+
+  .score-grade {
+    @apply inline-flex items-center justify-center rounded-xl font-bold backdrop-blur-sm;
+    @apply border-2 relative overflow-hidden;
+  }
+
+  .score-grade-a { @apply score-grade bg-emerald-500/10 border-emerald-500/50 text-emerald-400; }
+  .score-grade-b { @apply score-grade bg-blue-500/10    border-blue-500/50    text-blue-400; }
+  .score-grade-c { @apply score-grade bg-amber-500/10   border-amber-500/50   text-amber-400; }
+  .score-grade-d { @apply score-grade bg-orange-500/10  border-orange-500/50  text-orange-400; }
+  .score-grade-f { @apply score-grade bg-red-500/10     border-red-500/50     text-red-400; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up { animation: slide-up 0.2s ease-out; }
