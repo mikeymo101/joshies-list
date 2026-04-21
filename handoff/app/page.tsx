@@ -42,7 +42,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="mt-6 text-lg text-white/55 max-w-xl mx-auto leading-relaxed text-pretty">
-            Check a homeowner&apos;s track record before you bid. Anonymous reviews from contractors who&apos;ve already done the job.
+            Check a homeowner's track record before you bid. Anonymous reviews from contractors who've already done the job.
           </p>
 
           {/* ============ SEARCH-FIRST HERO ACTION ============ */}
@@ -148,7 +148,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              See what you&apos;re <span className="text-brand-500">getting.</span>
+              See what you're <span className="text-brand-500">getting.</span>
             </h2>
             <p className="mt-4 text-white/50 text-lg max-w-xl mx-auto">
               Every client gets a grade, a score breakdown, and contractor consensus.
@@ -265,11 +265,11 @@ export default function LandingPage() {
       <footer className="border-t border-white/5 py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <p className="text-xs text-white/35 text-center mb-4">
-            All content on Joshie&apos;s List represents user-submitted opinions and has not been independently verified. Scores and grades are algorithmic calculations of subjective ratings.
+            All content on Joshie's List represents user-submitted opinions and has not been independently verified. Scores and grades are algorithmic calculations of subjective ratings.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <span className="text-sm text-white/40">
-              &copy; {new Date().getFullYear()} Joshie&apos;s List. All rights reserved.
+              &copy; {new Date().getFullYear()} Joshie's List. All rights reserved.
             </span>
             <div className="flex items-center gap-6 text-sm text-white/40">
               <Link href="/legal/terms"      className="hover:text-white/65 transition-colors">Terms</Link>
