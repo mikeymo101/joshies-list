@@ -193,7 +193,7 @@ export default async function ScoreCardPage({ params }: { params: { id: string }
             href="/signup"
             className="inline-block px-6 py-2.5 text-sm font-semibold bg-brand-500 text-black rounded-xl hover:bg-brand-400 transition-all"
           >
-            Sign Up Free
+            Get Started
           </Link>
         </div>
       </div>
