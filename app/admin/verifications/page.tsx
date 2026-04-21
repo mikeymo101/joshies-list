@@ -17,7 +17,7 @@ interface Verification {
 }
 
 const STATUS_COLORS: Record<string, string> = {
-  pending: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+  pending: 'bg-brand-500/15 text-brand-400 border-brand-500/25',
   approved: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
   rejected: 'bg-red-500/15 text-red-400 border-red-500/25',
 };
@@ -64,7 +64,7 @@ export default function AdminVerificationsPage() {
         <div className="glass-card p-12 text-center max-w-md">
           <h1 className="text-xl font-bold text-white mb-2">Access Denied</h1>
           <p className="text-gray-400 text-sm mb-4">You don&apos;t have admin access.</p>
-          <Link href="/dashboard" className="text-amber-400 text-sm">Go to Dashboard</Link>
+          <Link href="/dashboard" className="text-brand-400 text-sm">Go to Dashboard</Link>
         </div>
       </div>
     );
@@ -88,7 +88,7 @@ export default function AdminVerificationsPage() {
             onClick={() => setFilter(s)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
               filter === s
-                ? 'bg-amber-500/15 text-amber-400 border border-amber-500/25'
+                ? 'bg-brand-500/15 text-brand-400 border border-brand-500/25'
                 : 'bg-white/5 text-gray-500 border border-white/5 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -127,7 +127,7 @@ export default function AdminVerificationsPage() {
                     {v.reviewed_at && <span>Reviewed {new Date(v.reviewed_at).toLocaleDateString()}</span>}
                   </div>
                   {v.document_url && (
-                    <a href={v.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 text-xs text-amber-400 hover:text-amber-300">
+                    <a href={v.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 text-xs text-brand-400 hover:text-brand-300">
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                       View Document
                     </a>

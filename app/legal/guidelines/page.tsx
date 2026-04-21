@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function ContentGuidelines() {
   return (
     <div className="min-h-screen bg-[#0a0f14]">
-      <nav className="h-16 flex items-center px-6 border-b border-amber-500/10">
+      <nav className="h-16 flex items-center px-6 border-b border-brand-500/10">
         <Link href="/" className="text-xl font-bold text-white tracking-tight">
           <img src="/logo.svg" alt="Joshies List" className="h-6" />
         </Link>
@@ -63,7 +63,7 @@ export default function ContentGuidelines() {
 
           <section>
             <h2 className="text-xl font-semibold text-white">Disputes and Removal</h2>
-            <p>If you are the subject of a review and believe it violates these guidelines, you may submit a removal request through our <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link>. All requests are reviewed within 48 hours.</p>
+            <p>If you are the subject of a review and believe it violates these guidelines, you may submit a removal request through our <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link>. All requests are reviewed within 48 hours.</p>
           </section>
 
           <section>

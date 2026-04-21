@@ -46,11 +46,11 @@ function getGradeClass(grade: string | null) {
 }
 
 function getBarColor(score: number) {
-  if (score >= 4.5) return 'bg-emerald-500';
-  if (score >= 3.5) return 'bg-blue-500';
-  if (score >= 2.5) return 'bg-amber-500';
-  if (score >= 1.5) return 'bg-orange-500';
-  return 'bg-red-500';
+  if (score >= 4.5) return 'bg-grade-a';
+  if (score >= 3.5) return 'bg-grade-b';
+  if (score >= 2.5) return 'bg-grade-c';
+  if (score >= 1.5) return 'bg-grade-d';
+  return 'bg-grade-f';
 }
 
 export default async function ScoreCardPage({ params }: { params: { id: string } }) {
@@ -154,7 +154,7 @@ export default async function ScoreCardPage({ params }: { params: { id: string }
           {/* Would work again */}
           {wouldWorkAgainPct !== null && (
             <div className="flex items-center gap-3 mb-6 p-3 rounded-xl bg-white/[0.03] border border-white/5">
-              <span className={`text-2xl font-bold ${wouldWorkAgainPct >= 70 ? 'text-emerald-400' : wouldWorkAgainPct >= 40 ? 'text-amber-400' : 'text-red-400'}`}>
+              <span className={`text-2xl font-bold ${wouldWorkAgainPct >= 70 ? 'text-emerald-400' : wouldWorkAgainPct >= 40 ? 'text-brand-400' : 'text-red-400'}`}>
                 {wouldWorkAgainPct}%
               </span>
               <span className="text-sm text-navy-400">of contractors would work with this client again</span>
@@ -191,7 +191,7 @@ export default async function ScoreCardPage({ params }: { params: { id: string }
           <p className="text-xs text-white/30 mb-3">Are you a contractor? Join the network.</p>
           <Link
             href="/signup"
-            className="inline-block px-6 py-2.5 text-sm font-semibold bg-amber-500 text-black rounded-xl hover:bg-amber-400 transition-all"
+            className="inline-block px-6 py-2.5 text-sm font-semibold bg-brand-500 text-black rounded-xl hover:bg-brand-400 transition-all"
           >
             Sign Up Free
           </Link>

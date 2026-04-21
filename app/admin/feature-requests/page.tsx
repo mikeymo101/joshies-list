@@ -16,7 +16,7 @@ interface FeatureRequest {
 
 const STATUS_COLORS: Record<string, string> = {
   new: 'bg-blue-500/15 text-blue-400 border-blue-500/25',
-  reviewed: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+  reviewed: 'bg-brand-500/15 text-brand-400 border-brand-500/25',
   planned: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
   completed: 'bg-green-500/15 text-green-400 border-green-500/25',
   declined: 'bg-red-500/15 text-red-400 border-red-500/25',
@@ -75,7 +75,7 @@ export default function AdminFeatureRequestsPage() {
         <div className="glass-card p-12 text-center max-w-md">
           <h1 className="text-xl font-bold text-white mb-2">Access Denied</h1>
           <p className="text-gray-400 text-sm mb-4">You don&apos;t have admin access.</p>
-          <Link href="/dashboard" className="text-amber-400 text-sm">Go to Dashboard</Link>
+          <Link href="/dashboard" className="text-brand-400 text-sm">Go to Dashboard</Link>
         </div>
       </div>
     );
@@ -99,7 +99,7 @@ export default function AdminFeatureRequestsPage() {
             onClick={() => setFilter(s)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
               filter === s
-                ? 'bg-amber-500/15 text-amber-400 border border-amber-500/25'
+                ? 'bg-brand-500/15 text-brand-400 border border-brand-500/25'
                 : 'bg-white/5 text-gray-500 border border-white/5 hover:text-white hover:bg-white/10'
             }`}
           >

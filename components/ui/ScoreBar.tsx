@@ -17,9 +17,9 @@ function getScoreColor(percentage: number) {
     text: 'text-blue-400',
   };
   if (percentage >= 60) return {
-    bar: 'bg-gradient-to-r from-amber-500 to-amber-400',
+    bar: 'bg-gradient-to-r from-brand-500 to-brand-400',
     glow: 'shadow-[0_0_12px_rgba(245,158,11,0.4)]',
-    text: 'text-amber-400',
+    text: 'text-brand-400',
   };
   return {
     bar: 'bg-gradient-to-r from-red-500 to-red-400',

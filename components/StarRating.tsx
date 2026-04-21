@@ -29,7 +29,7 @@ export default function StarRating({ rating, onChange, readonly = false, size = 
             <svg
               className={`${sizes[size]} transition-all duration-200 ${
                 isFilled
-                  ? 'fill-amber-400 text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]'
+                  ? 'fill-brand-400 text-brand-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]'
                   : 'fill-none text-white/15 group-hover:text-white/30'
               }`}
               xmlns="http://www.w3.org/2000/svg"

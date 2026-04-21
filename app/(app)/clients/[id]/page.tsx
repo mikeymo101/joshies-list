@@ -9,11 +9,11 @@ import { MapPin, Share2, Calendar, DollarSign, ThumbsUp, ThumbsDown, ArrowLeft, 
 
 function getGradeConfig(grade: string | null) {
   switch (grade) {
-    case 'A': return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/50', text: 'text-emerald-400', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.25)]' };
-    case 'B': return { bg: 'bg-blue-500/10', border: 'border-blue-500/50', text: 'text-blue-400', glow: 'shadow-[0_0_30px_rgba(59,130,246,0.25)]' };
-    case 'C': return { bg: 'bg-amber-500/10', border: 'border-amber-500/50', text: 'text-amber-400', glow: 'shadow-[0_0_30px_rgba(245,158,11,0.25)]' };
-    case 'D': return { bg: 'bg-orange-500/10', border: 'border-orange-500/50', text: 'text-orange-400', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.25)]' };
-    case 'F': return { bg: 'bg-red-500/10', border: 'border-red-500/50', text: 'text-red-400', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.25)]' };
+    case 'A': return { bg: 'bg-grade-a/10', border: 'border-grade-a/50', text: 'text-grade-a', glow: 'shadow-[0_0_30px_rgba(16,185,129,0.25)]' };
+    case 'B': return { bg: 'bg-grade-b/10', border: 'border-grade-b/50', text: 'text-grade-b', glow: 'shadow-[0_0_30px_rgba(59,130,246,0.25)]' };
+    case 'C': return { bg: 'bg-grade-c/10', border: 'border-grade-c/50', text: 'text-grade-c', glow: 'shadow-[0_0_30px_rgba(245,158,11,0.25)]' };
+    case 'D': return { bg: 'bg-grade-d/10', border: 'border-grade-d/50', text: 'text-grade-d', glow: 'shadow-[0_0_30px_rgba(249,115,22,0.25)]' };
+    case 'F': return { bg: 'bg-grade-f/10', border: 'border-grade-f/50', text: 'text-grade-f', glow: 'shadow-[0_0_30px_rgba(239,68,68,0.25)]' };
     default: return { bg: 'bg-white/5', border: 'border-white/20', text: 'text-white/40', glow: '' };
   }
 }
@@ -65,7 +65,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
   }
 
   if (!client) {
-    return <div className="glass-card p-12 text-center"><p className="text-white/50">Client not found</p><Link href="/search" className="text-amber-400 text-sm mt-2 inline-block">Back to search</Link></div>;
+    return <div className="glass-card p-12 text-center"><p className="text-white/50">Client not found</p><Link href="/search" className="text-brand-400 text-sm mt-2 inline-block">Back to search</Link></div>;
   }
 
   const gc = getGradeConfig(client.grade);
@@ -105,7 +105,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
             <button onClick={toggleWatchlist}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-sm transition-all ${
                 onWatchlist
-                  ? 'bg-amber-500/10 border-amber-500/25 text-amber-400 hover:bg-amber-500/15'
+                  ? 'bg-brand-500/10 border-brand-500/25 text-brand-400 hover:bg-brand-500/15'
                   : 'bg-white/5 border-white/10 text-white/70 hover:text-white hover:bg-white/10'
               }`}>
               {onWatchlist ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
@@ -136,7 +136,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
                 { name: 'Site & Schedule', score: scoreBreakdown.access },
               ].map(cat => (
                 <div key={cat.name} className="text-center p-4 bg-white/5 rounded-xl">
-                  <div className="font-mono text-2xl font-bold text-amber-400">{cat.score.toFixed(1)}</div>
+                  <div className="font-mono text-2xl font-bold text-brand-400">{cat.score.toFixed(1)}</div>
                   <div className="text-xs text-white/50 mt-1">{cat.name}</div>
                 </div>
               ))}
@@ -169,7 +169,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
               <div key={i} className="glass-card p-6">
                 <div className="flex items-start justify-between mb-3">
                   <div className="text-sm text-white/70">{r.job_type}</div>
-                  <div className="font-mono text-lg font-bold text-amber-400">{r.weighted_score.toFixed(1)}</div>
+                  <div className="font-mono text-lg font-bold text-brand-400">{r.weighted_score.toFixed(1)}</div>
                 </div>
                 <div className="flex flex-wrap gap-4 text-sm text-white/50">
                   <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{new Date(r.created_at).toLocaleDateString()}</span>
@@ -192,7 +192,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
           <h3 className="text-sm font-semibold text-white">Worked with this client?</h3>
           <p className="text-xs text-white/40 mt-0.5">Help other contractors by leaving a review</p>
         </div>
-        <Link href={`/review/${client.id}`} className="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all text-sm">
+        <Link href={`/review/${client.id}`} className="px-5 py-2.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all text-sm">
           Leave a Review
         </Link>
       </div>

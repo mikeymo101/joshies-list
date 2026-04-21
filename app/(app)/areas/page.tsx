@@ -26,11 +26,11 @@ function getGradeClass(grade: string) {
 }
 
 function getScoreBarColor(score: number) {
-  if (score >= 4.5) return 'bg-emerald-500';
-  if (score >= 3.5) return 'bg-blue-500';
-  if (score >= 2.5) return 'bg-amber-500';
-  if (score >= 1.5) return 'bg-orange-500';
-  return 'bg-red-500';
+  if (score >= 4.5) return 'bg-grade-a';
+  if (score >= 3.5) return 'bg-grade-b';
+  if (score >= 2.5) return 'bg-grade-c';
+  if (score >= 1.5) return 'bg-grade-d';
+  return 'bg-grade-f';
 }
 
 export default function AreasPage() {
@@ -94,7 +94,7 @@ export default function AreasPage() {
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">No area insights yet</h3>
           <p className="text-navy-400 text-sm mb-6 max-w-sm mx-auto">As contractors submit reviews, area scores reveal which neighborhoods have the best clients. Start reviewing to build the map.</p>
-          <Link href="/review/new" className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-black font-semibold rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
+          <Link href="/review/new" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-500 text-black font-semibold rounded-xl hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
             Submit a Review
           </Link>
@@ -126,7 +126,7 @@ export default function AreasPage() {
                   <div className="text-xs text-navy-400">{area.clientCount} clients</div>
                   <div className="text-xs text-navy-500">{area.reviewCount} reviews</div>
                   {area.wouldWorkAgainPct !== null && (
-                    <div className={`text-xs font-semibold mt-0.5 ${area.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : area.wouldWorkAgainPct >= 40 ? 'text-amber-400' : 'text-red-400'}`}>
+                    <div className={`text-xs font-semibold mt-0.5 ${area.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : area.wouldWorkAgainPct >= 40 ? 'text-brand-400' : 'text-red-400'}`}>
                       {area.wouldWorkAgainPct}% would work again
                     </div>
                   )}
@@ -137,7 +137,7 @@ export default function AreasPage() {
                 <span>{area.clientCount} clients</span>
                 <span>{area.reviewCount} reviews</span>
                 {area.wouldWorkAgainPct !== null && (
-                  <span className={`font-semibold ${area.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : area.wouldWorkAgainPct >= 40 ? 'text-amber-400' : 'text-red-400'}`}>
+                  <span className={`font-semibold ${area.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : area.wouldWorkAgainPct >= 40 ? 'text-brand-400' : 'text-red-400'}`}>
                     {area.wouldWorkAgainPct}% again
                   </span>
                 )}

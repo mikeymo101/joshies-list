@@ -14,11 +14,11 @@ interface CompareClient extends Client {
 
 function getGradeConfig(grade: string | null) {
   switch (grade) {
-    case 'A': return 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]';
-    case 'B': return 'bg-blue-500/10 border-blue-500/50 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.2)]';
-    case 'C': return 'bg-amber-500/10 border-amber-500/50 text-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.2)]';
-    case 'D': return 'bg-orange-500/10 border-orange-500/50 text-orange-400';
-    case 'F': return 'bg-red-500/10 border-red-500/50 text-red-400 shadow-[0_0_20px_rgba(239,68,68,0.2)]';
+    case 'A': return 'bg-grade-a/10 border-grade-a/50 text-grade-a shadow-[0_0_20px_rgba(16,185,129,0.2)]';
+    case 'B': return 'bg-grade-b/10 border-grade-b/50 text-grade-b shadow-[0_0_20px_rgba(59,130,246,0.2)]';
+    case 'C': return 'bg-grade-c/10 border-grade-c/50 text-grade-c shadow-[0_0_20px_rgba(245,158,11,0.2)]';
+    case 'D': return 'bg-grade-d/10 border-grade-d/50 text-grade-d';
+    case 'F': return 'bg-grade-f/10 border-grade-f/50 text-grade-f shadow-[0_0_20px_rgba(239,68,68,0.2)]';
     default: return 'bg-white/5 border-white/20 text-white/40';
   }
 }
@@ -72,8 +72,8 @@ export default function ComparePage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-xl flex items-center justify-center">
-          <ArrowLeftRight className="w-6 h-6 text-amber-400" />
+        <div className="w-12 h-12 bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-xl flex items-center justify-center">
+          <ArrowLeftRight className="w-6 h-6 text-brand-400" />
         </div>
         <div>
           <h1 className="text-3xl font-bold text-white">Compare Clients</h1>
@@ -84,7 +84,7 @@ export default function ComparePage() {
       {/* Add button */}
       {clients.length < 3 && (
         <div className="glass-card p-6">
-          <button onClick={() => setShowSearch(!showSearch)} className="w-full py-4 rounded-xl border-2 border-dashed border-[rgba(251,146,60,0.3)] hover:border-amber-500/50 text-white/50 hover:text-amber-400 transition-all flex items-center justify-center gap-2">
+          <button onClick={() => setShowSearch(!showSearch)} className="w-full py-4 rounded-xl border-2 border-dashed border-brand-500/30 hover:border-brand-500/50 text-white/50 hover:text-brand-400 transition-all flex items-center justify-center gap-2">
             <Plus className="w-5 h-5" /> Add Client to Compare (Max 3)
           </button>
 
@@ -93,14 +93,14 @@ export default function ComparePage() {
               <form onSubmit={handleSearch} className="flex gap-2">
                 <div className="relative flex-1">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                  <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Search for a client..." className="w-full pl-11 pr-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 transition-all" autoFocus />
+                  <input value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Search for a client..." className="w-full pl-11 pr-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 transition-all" autoFocus />
                 </div>
-                <button type="submit" disabled={searching} className="px-5 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 transition-all">
+                <button type="submit" disabled={searching} className="px-5 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 transition-all">
                   {searching ? '...' : 'Search'}
                 </button>
               </form>
               {searchResults.map(c => (
-                <button key={c.id} onClick={() => addClient(c)} className="w-full flex items-center gap-4 p-4 bg-orange-500/5 hover:bg-orange-500/10 rounded-xl border border-transparent hover:border-orange-500/20 transition-all text-left">
+                <button key={c.id} onClick={() => addClient(c)} className="w-full flex items-center gap-4 p-4 bg-brand-500/5 hover:bg-brand-500/10 rounded-xl border border-transparent hover:border-brand-500/20 transition-all text-left">
                   <div className={`w-9 h-9 flex items-center justify-center rounded-lg border-2 font-bold text-sm ${getGradeConfig(c.grade)}`}>{c.grade ?? '--'}</div>
                   <div className="flex-1">
                     <div className="font-semibold text-white">{c.first_name} {c.last_initial}.</div>
@@ -127,7 +127,7 @@ export default function ComparePage() {
 
                 <div className="p-6 space-y-6">
                   {/* Header */}
-                  <div className="text-center pb-6 border-b border-[rgba(251,146,60,0.15)]">
+                  <div className="text-center pb-6 border-b border-brand-500/15">
                     <div className={`w-28 h-28 mx-auto mb-4 flex items-center justify-center rounded-xl border-2 font-bold text-5xl backdrop-blur-sm ${getGradeConfig(client.grade)}`}>
                       {client.grade ?? '--'}
                     </div>
@@ -154,7 +154,7 @@ export default function ComparePage() {
 
                   {/* Would work again */}
                   {wouldWorkAgain !== null && (
-                    <div className="pt-4 border-t border-[rgba(251,146,60,0.15)] flex items-center justify-between">
+                    <div className="pt-4 border-t border-brand-500/15 flex items-center justify-between">
                       <span className="text-sm text-white/50">Would Work Again</span>
                       <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-sm font-semibold ${wouldWorkAgain >= 70 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
                         {wouldWorkAgain >= 70 ? <TrendingUp className="w-3.5 h-3.5" /> : <TrendingDown className="w-3.5 h-3.5" />}
@@ -172,12 +172,12 @@ export default function ComparePage() {
       {/* Empty state */}
       {clients.length === 0 && !showSearch && (
         <div className="glass-card p-16 text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <ArrowLeftRight className="w-10 h-10 text-amber-400/50" />
+          <div className="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <ArrowLeftRight className="w-10 h-10 text-brand-400/50" />
           </div>
           <h3 className="text-xl font-semibold text-white/60 mb-2">Compare clients side-by-side</h3>
           <p className="text-white/40 mb-6 max-w-sm mx-auto">Pick 2-3 clients to see how they stack up across every category. Great for choosing between jobs.</p>
-          <button onClick={() => setShowSearch(true)} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all">
+          <button onClick={() => setShowSearch(true)} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all">
             <Plus className="w-5 h-5" /> Add Clients
           </button>
         </div>

@@ -33,7 +33,7 @@ export default function DisputeForm() {
 
   return (
     <div className="min-h-screen bg-[#0a0f14]">
-      <nav className="h-16 flex items-center px-6 border-b border-amber-500/10">
+      <nav className="h-16 flex items-center px-6 border-b border-brand-500/10">
         <Link href="/" className="text-xl font-bold text-white tracking-tight">
           <img src="/logo.svg" alt="Joshies List" className="h-6" />
         </Link>
@@ -49,7 +49,7 @@ export default function DisputeForm() {
             </div>
             <h2 className="text-xl font-bold text-white mb-2">Request Received</h2>
             <p className="text-white/50 text-sm">We will review your request within 48 hours and respond to the email address provided.</p>
-            <Link href="/" className="text-amber-400 text-sm mt-4 inline-block">Return to home</Link>
+            <Link href="/" className="text-brand-400 text-sm mt-4 inline-block">Return to home</Link>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -58,20 +58,20 @@ export default function DisputeForm() {
                 {error}
               </div>
             )}
-            <div className="rounded-2xl border border-amber-500/20 bg-[#12121a] p-6 space-y-5">
+            <div className="rounded-2xl border border-brand-500/20 bg-[#12121a] p-6 space-y-5">
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Your Name <span className="text-amber-400">*</span></label>
-                <input value={name} onChange={e => setName(e.target.value)} required placeholder="Full name" className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">Your Name <span className="text-brand-400">*</span></label>
+                <input value={name} onChange={e => setName(e.target.value)} required placeholder="Full name" className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Email <span className="text-amber-400">*</span></label>
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="you@email.com" className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">Email <span className="text-brand-400">*</span></label>
+                <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="you@email.com" className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Request Type <span className="text-amber-400">*</span></label>
-                <select value={type} onChange={e => setType(e.target.value)} required className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all">
+                <label className="block text-sm font-medium text-white mb-2">Request Type <span className="text-brand-400">*</span></label>
+                <select value={type} onChange={e => setType(e.target.value)} required className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all">
                   <option value="" className="bg-[#0f1419]">Select type</option>
                   <option value="removal" className="bg-[#0f1419]">Content Removal Request</option>
                   <option value="inaccurate" className="bg-[#0f1419]">Inaccurate Information</option>
@@ -83,8 +83,8 @@ export default function DisputeForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Description <span className="text-amber-400">*</span></label>
-                <textarea value={description} onChange={e => setDescription(e.target.value)} required rows={5} placeholder="Please describe your concern in detail. Include any relevant names, dates, or URLs if applicable." className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all resize-none" />
+                <label className="block text-sm font-medium text-white mb-2">Description <span className="text-brand-400">*</span></label>
+                <textarea value={description} onChange={e => setDescription(e.target.value)} required rows={5} placeholder="Please describe your concern in detail. Include any relevant names, dates, or URLs if applicable." className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all resize-none" />
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default function DisputeForm() {
               All content on Joshies List represents user-submitted opinions and has not been independently verified. We take all removal requests seriously and respond within 48 hours.
             </p>
 
-            <button type="submit" disabled={loading} className="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all disabled:opacity-50">
+            <button type="submit" disabled={loading} className="w-full py-4 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all disabled:opacity-50">
               {loading ? 'Submitting...' : 'Submit Request'}
             </button>
           </form>

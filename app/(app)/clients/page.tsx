@@ -192,7 +192,7 @@ export default function MyReviewsPage() {
                   <span key={s.label} className={`text-xs px-2 py-1 rounded-lg border ${
                     s.score >= 4 ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' :
                     s.score >= 3 ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' :
-                    s.score >= 2 ? 'bg-amber-500/10 border-amber-500/20 text-amber-400' :
+                    s.score >= 2 ? 'bg-brand-500/10 border-brand-500/20 text-brand-400' :
                     'bg-red-500/10 border-red-500/20 text-red-400'
                   }`}>
                     {s.label}: {s.score}

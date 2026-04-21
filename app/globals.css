@@ -94,11 +94,11 @@ main, nav, aside, header, footer, section {
     @apply border-2 relative overflow-hidden;
   }
 
-  .score-grade-a { @apply score-grade bg-emerald-500/10 border-emerald-500/50 text-emerald-400; }
-  .score-grade-b { @apply score-grade bg-blue-500/10    border-blue-500/50    text-blue-400; }
-  .score-grade-c { @apply score-grade bg-amber-500/10   border-amber-500/50   text-amber-400; }
-  .score-grade-d { @apply score-grade bg-orange-500/10  border-orange-500/50  text-orange-400; }
-  .score-grade-f { @apply score-grade bg-red-500/10     border-red-500/50     text-red-400; }
+  .score-grade-a { @apply score-grade bg-grade-a/10 border-grade-a/50 text-grade-a; }
+  .score-grade-b { @apply score-grade bg-grade-b/10 border-grade-b/50 text-grade-b; }
+  .score-grade-c { @apply score-grade bg-grade-c/10 border-grade-c/50 text-grade-c; }
+  .score-grade-d { @apply score-grade bg-grade-d/10 border-grade-d/50 text-grade-d; }
+  .score-grade-f { @apply score-grade bg-grade-f/10 border-grade-f/50 text-grade-f; }
 }
 
 @layer utilities {

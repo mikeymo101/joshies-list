@@ -229,8 +229,8 @@ export default function AdminReviewsPage() {
                 </div>
 
                 {/* Contractor info - THIS IS THE ACCOUNTABILITY PIECE */}
-                <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/10 mb-4">
-                  <div className="text-xs text-amber-400 uppercase tracking-wider mb-1">Submitted By</div>
+                <div className="p-3 rounded-xl bg-brand-500/5 border border-brand-500/10 mb-4">
+                  <div className="text-xs text-brand-400 uppercase tracking-wider mb-1">Submitted By</div>
                   <div className="text-sm font-semibold text-white">{selectedReview.contractors.first_name} {selectedReview.contractors.last_name}</div>
                   {selectedReview.contractors.business_name && <div className="text-xs text-navy-400">{selectedReview.contractors.business_name}</div>}
                   <div className="text-xs text-navy-400 mt-1">
