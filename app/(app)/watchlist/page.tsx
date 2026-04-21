@@ -28,11 +28,11 @@ function removeFromWatchlist(id: string) {
 
 function getGradeConfig(grade: string | null) {
   switch (grade) {
-    case 'A': return 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400';
-    case 'B': return 'bg-blue-500/10 border-blue-500/50 text-blue-400';
-    case 'C': return 'bg-amber-500/10 border-amber-500/50 text-amber-400';
-    case 'D': return 'bg-orange-500/10 border-orange-500/50 text-orange-400';
-    case 'F': return 'bg-red-500/10 border-red-500/50 text-red-400';
+    case 'A': return 'bg-grade-a/10 border-grade-a/50 text-grade-a';
+    case 'B': return 'bg-grade-b/10 border-grade-b/50 text-grade-b';
+    case 'C': return 'bg-grade-c/10 border-grade-c/50 text-grade-c';
+    case 'D': return 'bg-grade-d/10 border-grade-d/50 text-grade-d';
+    case 'F': return 'bg-grade-f/10 border-grade-f/50 text-grade-f';
     default: return 'bg-white/5 border-white/20 text-white/40';
   }
 }
@@ -58,8 +58,8 @@ export default function WatchlistPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-xl flex items-center justify-center">
-            <Bookmark className="w-6 h-6 text-amber-400" />
+          <div className="w-12 h-12 bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-xl flex items-center justify-center">
+            <Bookmark className="w-6 h-6 text-brand-400" />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-white">Watchlist</h1>
@@ -98,22 +98,22 @@ export default function WatchlistPage() {
         </div>
       ) : (
         <div className="glass-card p-16 text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Bookmark className="w-10 h-10 text-amber-400/50" />
+          <div className="w-20 h-20 bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Bookmark className="w-10 h-10 text-brand-400/50" />
           </div>
           <h3 className="text-xl font-semibold text-white/60 mb-2">Your watchlist is empty</h3>
           <p className="text-white/40 mb-6 max-w-sm mx-auto">Save clients you&apos;re bidding on or keeping an eye on. Bookmark them from any client profile.</p>
-          <Link href="/search" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all">
+          <Link href="/search" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all">
             Search Clients
           </Link>
         </div>
       )}
 
       {items.length > 0 && (
-        <div className="glass-card p-6 border-amber-500/20">
+        <div className="glass-card p-6 border-brand-500/20">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center shrink-0">
-              <Bookmark className="w-5 h-5 text-amber-400" />
+            <div className="w-10 h-10 bg-brand-500/10 border border-brand-500/20 rounded-xl flex items-center justify-center shrink-0">
+              <Bookmark className="w-5 h-5 text-brand-400" />
             </div>
             <div>
               <h4 className="font-semibold text-white">Stay Updated</h4>

@@ -30,11 +30,11 @@ const GRADE_CONFIG: Record<ScoreCardProps['grade'], {
   glow: string;
   verdict: string;
 }> = {
-  A: { ring: 'border-emerald-500/60 bg-emerald-500/10', text: 'text-emerald-400', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.18)]', verdict: 'Bid with confidence' },
-  B: { ring: 'border-blue-500/60    bg-blue-500/10',    text: 'text-blue-400',    glow: 'shadow-[0_0_40px_rgba(59,130,246,0.18)]', verdict: 'Generally safe'       },
-  C: { ring: 'border-brand-500/60   bg-brand-500/10',   text: 'text-brand-400',   glow: 'shadow-[0_0_40px_rgba(245,158,11,0.20)]', verdict: 'Think twice'         },
-  D: { ring: 'border-orange-500/60  bg-orange-500/10',  text: 'text-orange-400',  glow: 'shadow-[0_0_40px_rgba(249,115,22,0.22)]', verdict: 'Proceed with caution'},
-  F: { ring: 'border-red-500/60     bg-red-500/10',     text: 'text-red-400',     glow: 'shadow-[0_0_40px_rgba(239,68,68,0.22)]',  verdict: 'Walk away'           },
+  A: { ring: 'border-grade-a/60 bg-grade-a/10', text: 'text-grade-a', glow: 'shadow-[0_0_40px_rgba(16,185,129,0.18)]', verdict: 'Bid with confidence' },
+  B: { ring: 'border-grade-b/60 bg-grade-b/10', text: 'text-grade-b', glow: 'shadow-[0_0_40px_rgba(59,130,246,0.18)]', verdict: 'Generally safe'       },
+  C: { ring: 'border-grade-c/60 bg-grade-c/10', text: 'text-grade-c', glow: 'shadow-[0_0_40px_rgba(245,158,11,0.20)]', verdict: 'Think twice'         },
+  D: { ring: 'border-grade-d/60 bg-grade-d/10', text: 'text-grade-d', glow: 'shadow-[0_0_40px_rgba(249,115,22,0.22)]', verdict: 'Proceed with caution'},
+  F: { ring: 'border-grade-f/60 bg-grade-f/10', text: 'text-grade-f', glow: 'shadow-[0_0_40px_rgba(239,68,68,0.22)]',  verdict: 'Walk away'           },
 };
 
 const RUBRIC_LABELS: Array<[keyof ScoreCardProps['rubric'], string]> = [

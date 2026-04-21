@@ -164,12 +164,12 @@ export default function NewReviewPage() {
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-xl flex items-center justify-center">
-          <Star className="w-6 h-6 text-amber-400" />
+        <div className="w-12 h-12 bg-gradient-to-br from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-xl flex items-center justify-center">
+          <Star className="w-6 h-6 text-brand-400" />
         </div>
         <div>
           <h1 className="text-3xl font-bold text-white">Submit Review</h1>
-          <p className="text-white/50">Help fellow contractors know their clients <span className="text-amber-400 font-medium">Takes 2 minutes</span></p>
+          <p className="text-white/50">Help fellow contractors know their clients <span className="text-brand-400 font-medium">Takes 2 minutes</span></p>
         </div>
       </div>
 
@@ -177,8 +177,8 @@ export default function NewReviewPage() {
       <div>
         <div className="text-xs font-medium text-white/50 mb-2">Step {step} of 2</div>
         <div className="flex gap-2">
-          <div className={`flex-1 h-2 rounded-full transition-all duration-500 ${step >= 1 ? 'bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30' : 'bg-white/5'}`} />
-          <div className={`flex-1 h-2 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-gradient-to-r from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30' : 'bg-white/5'}`} />
+          <div className={`flex-1 h-2 rounded-full transition-all duration-500 ${step >= 1 ? 'bg-gradient-to-r from-brand-500 to-brand-600 shadow-lg shadow-brand-500/30' : 'bg-white/5'}`} />
+          <div className={`flex-1 h-2 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-gradient-to-r from-brand-500 to-brand-600 shadow-lg shadow-brand-500/30' : 'bg-white/5'}`} />
         </div>
       </div>
 
@@ -191,7 +191,7 @@ export default function NewReviewPage() {
         <div className="glass-card p-8">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-              <div className="w-2 h-8 bg-gradient-to-b from-amber-400 to-amber-500 rounded-full" />
+              <div className="w-2 h-8 bg-gradient-to-b from-brand-400 to-brand-500 rounded-full" />
               Client Information
             </h2>
             <p className="text-white/50 mt-1">Enter the basic details about your client</p>
@@ -200,29 +200,29 @@ export default function NewReviewPage() {
           <div className="space-y-5">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-2">First Name <span className="text-amber-400">*</span></label>
-                <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="John" className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">First Name <span className="text-brand-400">*</span></label>
+                <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="John" className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Last Initial <span className="text-amber-400">*</span></label>
-                <input value={lastInitial} onChange={e => setLastInitial(e.target.value.charAt(0).toUpperCase())} placeholder="D" maxLength={1} className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">Last Initial <span className="text-brand-400">*</span></label>
+                <input value={lastInitial} onChange={e => setLastInitial(e.target.value.charAt(0).toUpperCase())} placeholder="D" maxLength={1} className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-2">City <span className="text-amber-400">*</span></label>
-                <input value={city} onChange={e => setCity(e.target.value)} placeholder="Austin" className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">City <span className="text-brand-400">*</span></label>
+                <input value={city} onChange={e => setCity(e.target.value)} placeholder="Austin" className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-white mb-2">State <span className="text-amber-400">*</span></label>
-                <input value={state} onChange={e => setState(e.target.value.toUpperCase())} placeholder="TX" maxLength={2} className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">State <span className="text-brand-400">*</span></label>
+                <input value={state} onChange={e => setState(e.target.value.toUpperCase())} placeholder="TX" maxLength={2} className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-white mb-2">ZIP <span className="text-amber-400">*</span></label>
-                <input value={zipCode} onChange={e => setZipCode(e.target.value)} placeholder="78701" maxLength={5} className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">ZIP <span className="text-brand-400">*</span></label>
+                <input value={zipCode} onChange={e => setZipCode(e.target.value)} placeholder="78701" maxLength={5} className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
             </div>
-            <button onClick={handleStep1} disabled={loading} className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all disabled:opacity-50 group">
+            <button onClick={handleStep1} disabled={loading} className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all disabled:opacity-50 group">
               {loading ? 'Checking...' : 'Continue to Ratings'}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -236,7 +236,7 @@ export default function NewReviewPage() {
           <h2 className="text-xl font-bold text-white">Is this the same person?</h2>
           <div className="space-y-2">
             {searchResults.map(c => (
-              <button key={c.id} onClick={() => selectExisting(c)} className="w-full flex items-center justify-between p-4 rounded-xl bg-orange-500/5 hover:bg-orange-500/10 border border-orange-500/10 hover:border-orange-500/20 transition-all text-left">
+              <button key={c.id} onClick={() => selectExisting(c)} className="w-full flex items-center justify-between p-4 rounded-xl bg-brand-500/5 hover:bg-brand-500/10 border border-brand-500/10 hover:border-brand-500/20 transition-all text-left">
                 <div>
                   <span className="font-semibold text-white">{c.first_name} {c.last_initial}.</span>
                   <span className="text-white/50 ml-2 text-sm">{c.city}, {c.state}</span>
@@ -265,7 +265,7 @@ export default function NewReviewPage() {
           <div className="glass-card p-8">
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-white flex items-center gap-2">
-                <div className="w-2 h-8 bg-gradient-to-b from-amber-400 to-amber-500 rounded-full" />
+                <div className="w-2 h-8 bg-gradient-to-b from-brand-400 to-brand-500 rounded-full" />
                 Rate Your Client
               </h2>
               <p className="text-white/50 mt-1">Rate each category from 1-5 stars</p>
@@ -273,13 +273,13 @@ export default function NewReviewPage() {
 
             <div className="space-y-8">
               {categories.map((cat, i) => (
-                <div key={cat.id} className={`pb-8 ${i !== categories.length - 1 ? 'border-b border-[rgba(251,146,60,0.15)]' : ''}`}>
+                <div key={cat.id} className={`pb-8 ${i !== categories.length - 1 ? 'border-b border-brand-500/15' : ''}`}>
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <h3 className="font-semibold text-lg text-white">{cat.label}</h3>
                       <p className="text-sm text-white/40">{cat.description}</p>
                     </div>
-                    <span className="text-xs text-amber-400/60">{cat.weight}</span>
+                    <span className="text-xs text-brand-400/60">{cat.weight}</span>
                   </div>
                   <StarRating rating={ratings[cat.id] || 0} onChange={v => setRatings({ ...ratings, [cat.id]: v })} size="lg" />
                 </div>
@@ -292,12 +292,12 @@ export default function NewReviewPage() {
             <h3 className="font-semibold text-xl text-white mb-6">Would you work with this client again?</h3>
             <div className="grid grid-cols-2 gap-4">
               <button type="button" onClick={() => setWouldWorkAgain(true)}
-                className={`group p-8 rounded-xl border-2 transition-all duration-300 ${wouldWorkAgain === true ? 'bg-emerald-500/10 border-emerald-500/50 shadow-lg shadow-emerald-500/20' : 'bg-orange-500/5 border-[rgba(251,146,60,0.15)] hover:border-[rgba(251,146,60,0.3)]'}`}>
+                className={`group p-8 rounded-xl border-2 transition-all duration-300 ${wouldWorkAgain === true ? 'bg-emerald-500/10 border-emerald-500/50 shadow-lg shadow-emerald-500/20' : 'bg-brand-500/5 border-brand-500/15 hover:border-brand-500/30'}`}>
                 <ThumbsUp className={`w-10 h-10 mx-auto mb-3 transition-transform group-hover:scale-110 ${wouldWorkAgain === true ? 'text-emerald-400' : 'text-white/30'}`} />
                 <div className={`font-semibold text-lg text-center ${wouldWorkAgain === true ? 'text-emerald-400' : 'text-white/50'}`}>Yes</div>
               </button>
               <button type="button" onClick={() => setWouldWorkAgain(false)}
-                className={`group p-8 rounded-xl border-2 transition-all duration-300 ${wouldWorkAgain === false ? 'bg-red-500/10 border-red-500/50 shadow-lg shadow-red-500/20' : 'bg-orange-500/5 border-[rgba(251,146,60,0.15)] hover:border-[rgba(251,146,60,0.3)]'}`}>
+                className={`group p-8 rounded-xl border-2 transition-all duration-300 ${wouldWorkAgain === false ? 'bg-red-500/10 border-red-500/50 shadow-lg shadow-red-500/20' : 'bg-brand-500/5 border-brand-500/15 hover:border-brand-500/30'}`}>
                 <ThumbsDown className={`w-10 h-10 mx-auto mb-3 transition-transform group-hover:scale-110 ${wouldWorkAgain === false ? 'text-red-400' : 'text-white/30'}`} />
                 <div className={`font-semibold text-lg text-center ${wouldWorkAgain === false ? 'text-red-400' : 'text-white/50'}`}>No</div>
               </button>
@@ -309,12 +309,12 @@ export default function NewReviewPage() {
             <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider">Job Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Job Type <span className="text-amber-400">*</span></label>
-                <input value={jobType} onChange={e => setJobType(e.target.value)} placeholder="Kitchen remodel" className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <label className="block text-sm font-medium text-white mb-2">Job Type <span className="text-brand-400">*</span></label>
+                <input value={jobType} onChange={e => setJobType(e.target.value)} placeholder="Kitchen remodel" className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white placeholder:text-white/30 focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-white mb-2">Job Value <span className="text-amber-400">*</span></label>
-                <select value={jobValue} onChange={e => setJobValue(e.target.value)} className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all">
+                <label className="block text-sm font-medium text-white mb-2">Job Value <span className="text-brand-400">*</span></label>
+                <select value={jobValue} onChange={e => setJobValue(e.target.value)} className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all">
                   <option value="" className="bg-[#0f1419]">Select range</option>
                   <option value="under-5k" className="bg-[#0f1419]">Under $5,000</option>
                   <option value="5k-15k" className="bg-[#0f1419]">$5,000 - $15,000</option>
@@ -325,15 +325,15 @@ export default function NewReviewPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-white mb-2">Approx Date</label>
-                <input type="month" value={jobDate} onChange={e => setJobDate(e.target.value)} className="w-full px-4 py-3 bg-orange-500/5 border border-orange-500/20 rounded-xl text-white focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 transition-all" />
+                <input type="month" value={jobDate} onChange={e => setJobDate(e.target.value)} className="w-full px-4 py-3 bg-brand-500/5 border border-brand-500/20 rounded-xl text-white focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20 transition-all" />
               </div>
             </div>
           </div>
 
           {/* TOS */}
-          <div className="glass-card p-6 border-amber-500/20">
+          <div className="glass-card p-6 border-brand-500/20">
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" checked={tosAcknowledged} onChange={e => setTosAcknowledged(e.target.checked)} className="mt-1 w-5 h-5 rounded border-white/20 bg-white/5 text-amber-500 focus:ring-amber-500/50" />
+              <input type="checkbox" checked={tosAcknowledged} onChange={e => setTosAcknowledged(e.target.checked)} className="mt-1 w-5 h-5 rounded border-white/20 bg-white/5 text-brand-500 focus:ring-brand-500/50" />
               <span className="text-sm text-white/60 leading-relaxed">
                 I certify that this review is based on my own experience and is my genuine opinion. I understand that false or defamatory reviews may have legal consequences.
               </span>
@@ -345,7 +345,7 @@ export default function NewReviewPage() {
             <button onClick={() => setStep(1)} className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 transition-all">
               <ArrowLeft className="w-5 h-5" /> Back
             </button>
-            <button onClick={handleSubmit} disabled={!canSubmit || loading} className="flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-amber-700 shadow-lg shadow-amber-500/20 transition-all disabled:opacity-50 group">
+            <button onClick={handleSubmit} disabled={!canSubmit || loading} className="flex-1 flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold rounded-xl hover:from-brand-600 hover:to-brand-700 shadow-lg shadow-brand-500/20 transition-all disabled:opacity-50 group">
               <CheckCircle className="w-5 h-5" />
               {loading ? 'Submitting...' : 'Submit Review'}
             </button>

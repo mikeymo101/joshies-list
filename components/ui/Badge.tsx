@@ -7,7 +7,7 @@ export default function Badge({ children, variant = 'default' }: BadgeProps) {
   const variants = {
     default: 'bg-white/10 text-navy-200 border-white/10',
     success: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/20',
-    warning: 'bg-amber-500/15 text-amber-400 border-amber-500/20',
+    warning: 'bg-brand-500/15 text-brand-400 border-brand-500/20',
     danger: 'bg-red-500/15 text-red-400 border-red-500/20',
   };
 

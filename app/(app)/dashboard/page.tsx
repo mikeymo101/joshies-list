@@ -134,7 +134,7 @@ export default function DashboardPage() {
               <span className="text-xs lg:text-sm text-navy-400">Would Work Again</span>
               <div className="text-2xl lg:text-3xl font-bold mt-1">
                 {stats?.wouldWorkAgainPct !== null && stats?.wouldWorkAgainPct !== undefined ? (
-                  <span className={stats.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : stats.wouldWorkAgainPct >= 40 ? 'text-amber-400' : 'text-red-400'}>
+                  <span className={stats.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : stats.wouldWorkAgainPct >= 40 ? 'text-brand-400' : 'text-red-400'}>
                     {stats.wouldWorkAgainPct}%
                   </span>
                 ) : (

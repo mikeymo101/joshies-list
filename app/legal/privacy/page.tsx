@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-[#0a0f14]">
-      <nav className="h-16 flex items-center px-6 border-b border-amber-500/10">
+      <nav className="h-16 flex items-center px-6 border-b border-brand-500/10">
         <Link href="/" className="text-xl font-bold text-white tracking-tight">
           <img src="/logo.svg" alt="Joshies List" className="h-6" />
         </Link>
@@ -72,14 +72,14 @@ export default function PrivacyPolicy() {
             </ul>
             <p className="mt-3"><strong>Reviewed individuals</strong> can:</p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Request content removal through our <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link></li>
+              <li>Request content removal through our <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link></li>
               <li>All removal requests are reviewed within 48 hours</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-white">6. California Privacy Rights</h2>
-            <p>California residents have additional rights under the CCPA, including the right to know what personal information we collect, the right to deletion, and the right to opt out of data sales. We do not sell personal information. To exercise your rights, submit a request through our <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link>.</p>
+            <p>California residents have additional rights under the CCPA, including the right to know what personal information we collect, the right to deletion, and the right to opt out of data sales. We do not sell personal information. To exercise your rights, submit a request through our <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link>.</p>
           </section>
 
           <section>
@@ -99,7 +99,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold text-white">10. Contact</h2>
-            <p>For privacy-related inquiries, use our <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link>.</p>
+            <p>For privacy-related inquiries, use our <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link>.</p>
           </section>
         </div>
       </div>

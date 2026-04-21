@@ -65,12 +65,12 @@ export default function FeatureRequestModal({ open, onClose }: { open: boolean; 
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
 
       {/* Modal */}
-      <div className="relative w-full max-w-lg bg-[#0f1419] border border-amber-500/15 rounded-2xl shadow-2xl shadow-black/50 animate-slide-up">
+      <div className="relative w-full max-w-lg bg-[#0f1419] border border-brand-500/15 rounded-2xl shadow-2xl shadow-black/50 animate-slide-up">
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-6 pb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-              <svg className="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <svg className="w-5 h-5 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
@@ -116,7 +116,7 @@ export default function FeatureRequestModal({ open, onClose }: { open: boolean; 
                     onClick={() => setCategory(c.value)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                       category === c.value
-                        ? 'bg-amber-500/15 text-amber-400 border border-amber-500/25'
+                        ? 'bg-brand-500/15 text-brand-400 border border-brand-500/25'
                         : 'bg-white/5 text-gray-500 border border-white/5 hover:text-white hover:bg-white/10'
                     }`}
                   >
@@ -138,7 +138,7 @@ export default function FeatureRequestModal({ open, onClose }: { open: boolean; 
                 maxLength={100}
                 required
                 placeholder="e.g. Add photos to reviews"
-                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-amber-500/30 focus:ring-1 focus:ring-amber-500/20 transition-all"
+                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500/30 focus:ring-1 focus:ring-brand-500/20 transition-all"
               />
             </div>
 
@@ -154,7 +154,7 @@ export default function FeatureRequestModal({ open, onClose }: { open: boolean; 
                 required
                 rows={4}
                 placeholder="What problem does this solve? How would it help your workflow?"
-                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-amber-500/30 focus:ring-1 focus:ring-amber-500/20 transition-all resize-none"
+                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500/30 focus:ring-1 focus:ring-brand-500/20 transition-all resize-none"
               />
             </div>
 
@@ -162,7 +162,7 @@ export default function FeatureRequestModal({ open, onClose }: { open: boolean; 
             <button
               type="submit"
               disabled={submitting || !title.trim() || !description.trim()}
-              className="w-full px-5 py-3 rounded-xl bg-amber-500 text-black text-sm font-semibold hover:bg-amber-400 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-amber-500/25"
+              className="w-full px-5 py-3 rounded-xl bg-brand-500 text-black text-sm font-semibold hover:bg-brand-400 transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-brand-500/25"
             >
               {submitting ? 'Submitting...' : 'Submit Request'}
             </button>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-[#0a0f14]">
-      <nav className="h-16 flex items-center px-6 border-b border-amber-500/10">
+      <nav className="h-16 flex items-center px-6 border-b border-brand-500/10">
         <Link href="/" className="text-xl font-bold text-white tracking-tight">
           <img src="/logo.svg" alt="Joshies List" className="h-6" />
         </Link>
@@ -49,7 +49,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-xl font-semibold text-white">6. Content Removal and Disputes</h2>
-            <p>Any individual who believes content on the Platform is inaccurate, defamatory, or violates their rights may submit a removal request through our <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link>. We commit to reviewing all removal requests within 48 hours.</p>
+            <p>Any individual who believes content on the Platform is inaccurate, defamatory, or violates their rights may submit a removal request through our <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link>. We commit to reviewing all removal requests within 48 hours.</p>
             <p>Joshies List reserves the right to remove, edit, or modify any content at any time, for any reason, without notice.</p>
           </section>
 
@@ -86,7 +86,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-xl font-semibold text-white">13. Contact</h2>
-            <p>For questions about these Terms, contact us through the <Link href="/legal/dispute" className="text-amber-400 hover:text-amber-300">Dispute &amp; Removal Form</Link>.</p>
+            <p>For questions about these Terms, contact us through the <Link href="/legal/dispute" className="text-brand-400 hover:text-brand-300">Dispute &amp; Removal Form</Link>.</p>
           </section>
         </div>
       </div>

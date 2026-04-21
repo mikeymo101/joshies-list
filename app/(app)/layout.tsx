@@ -104,7 +104,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-[#0a0a0f]">
       {/* Mobile header */}
-      <header className="lg:hidden sticky top-0 z-50 bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-amber-500/10 h-14 flex items-center justify-between px-4">
+      <header className="lg:hidden sticky top-0 z-50 bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-brand-500/10 h-14 flex items-center justify-between px-4">
         <Link href="/dashboard" className="text-lg font-bold text-white tracking-tight">
           <img src="/logo.svg" alt="Joshies List" className="h-7" />
         </Link>
@@ -129,7 +129,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               return (
                 <Link key={item.href + item.label} href={item.href} onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all ${
-                    isActive ? 'text-amber-500 bg-amber-500/5' : 'text-gray-500 hover:text-white hover:bg-white/5'
+                    isActive ? 'text-brand-500 bg-brand-500/5' : 'text-gray-500 hover:text-white hover:bg-white/5'
                   }`}>
                   {item.icon}
                   {item.label}
@@ -140,9 +140,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               );
             })}
             <button onClick={() => { setMobileMenuOpen(false); setFeatureModalOpen(true); }}
-              className="relative flex items-center gap-3 px-4 py-4 rounded-xl text-base font-semibold text-amber-400 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/25 hover:border-amber-500/40 transition-all w-full mt-4 shadow-lg shadow-amber-500/5">
-              <div className="absolute top-0 right-0 w-2 h-2 m-3 rounded-full bg-amber-400 animate-pulse" />
-              <div className="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/25 flex items-center justify-center shrink-0">
+              className="relative flex items-center gap-3 px-4 py-4 rounded-xl text-base font-semibold text-brand-400 bg-gradient-to-r from-brand-500/10 to-brand-500/10 border border-brand-500/25 hover:border-brand-500/40 transition-all w-full mt-4 shadow-lg shadow-brand-500/5">
+              <div className="absolute top-0 right-0 w-2 h-2 m-3 rounded-full bg-brand-400 animate-pulse" />
+              <div className="w-9 h-9 rounded-lg bg-brand-500/20 border border-brand-500/25 flex items-center justify-center shrink-0">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
               </div>
               <div className="text-left">
@@ -160,7 +160,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       )}
 
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex w-[272px] border-r border-amber-500/10 bg-[#0a0a0f] flex-col shrink-0 sticky top-0 h-screen">
+      <aside className="hidden lg:flex w-[272px] border-r border-brand-500/10 bg-[#0a0a0f] flex-col shrink-0 sticky top-0 h-screen">
         {/* Logo */}
         <div className="px-6 pt-7 pb-5">
           <Link href="/dashboard" className="text-2xl font-bold text-white tracking-tight">
@@ -177,10 +177,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <Link key={item.href + item.label} href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all relative ${
                   isActive
-                    ? 'text-amber-500 bg-amber-500/5'
+                    ? 'text-brand-500 bg-brand-500/5'
                     : 'text-gray-500 hover:text-white hover:bg-white/5'
                 }`}>
-                {isActive && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-amber-500 rounded-r-full" />}
+                {isActive && <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 bg-brand-500 rounded-r-full" />}
                 {item.icon}
                 {item.label}
                 {item.label === 'Admin' && newRequestCount > 0 && (
@@ -196,16 +196,16 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           {/* Feature request */}
           <button
             onClick={() => setFeatureModalOpen(true)}
-            className="w-full relative overflow-hidden flex items-center gap-3 px-4 py-3.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/25 hover:border-amber-500/40 hover:from-amber-500/15 hover:to-orange-500/15 transition-all text-left group shadow-lg shadow-amber-500/5 hover:shadow-amber-500/10"
+            className="w-full relative overflow-hidden flex items-center gap-3 px-4 py-3.5 rounded-xl bg-gradient-to-r from-brand-500/10 to-brand-500/10 border border-brand-500/25 hover:border-brand-500/40 hover:from-brand-500/15 hover:to-brand-500/15 transition-all text-left group shadow-lg shadow-brand-500/5 hover:shadow-brand-500/10"
           >
-            <div className="absolute top-0 right-0 w-2 h-2 m-2 rounded-full bg-amber-400 animate-pulse" />
-            <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/25 flex items-center justify-center shrink-0 group-hover:bg-amber-500/30 transition-colors">
-              <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="absolute top-0 right-0 w-2 h-2 m-2 rounded-full bg-brand-400 animate-pulse" />
+            <div className="w-8 h-8 rounded-lg bg-brand-500/20 border border-brand-500/25 flex items-center justify-center shrink-0 group-hover:bg-brand-500/30 transition-colors">
+              <svg className="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
             <div>
-              <p className="text-xs font-bold text-amber-400 group-hover:text-amber-300 transition-colors">Request a Feature</p>
+              <p className="text-xs font-bold text-brand-400 group-hover:text-brand-300 transition-colors">Request a Feature</p>
               <p className="text-[11px] text-gray-500">Tell us what you need</p>
             </div>
           </button>
@@ -220,7 +220,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
           {/* Quick check button */}
           <Link href="/search"
-            className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-amber-500 text-black text-sm font-semibold hover:bg-amber-400 transition-all">
+            className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-brand-500 text-black text-sm font-semibold hover:bg-brand-400 transition-all">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             Quick Check
           </Link>
@@ -235,7 +235,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
         {/* Floating add button (mobile) */}
         <Link href="/review/new"
-          className="lg:hidden fixed bottom-6 right-6 w-14 h-14 rounded-full bg-amber-500 text-black flex items-center justify-center shadow-lg shadow-amber-500/30 z-30 hover:bg-amber-400 transition-all">
+          className="lg:hidden fixed bottom-6 right-6 w-14 h-14 rounded-full bg-brand-500 text-black flex items-center justify-center shadow-lg shadow-brand-500/30 z-30 hover:bg-brand-400 transition-all">
           <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
         </Link>
       </main>

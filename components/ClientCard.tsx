@@ -9,11 +9,11 @@ interface ClientCardProps {
 
 function getGradeConfig(grade: string | null) {
   switch (grade) {
-    case 'A': return { bg: 'bg-emerald-500/10', border: 'border-emerald-500/50', text: 'text-emerald-400', glow: 'shadow-[0_0_20px_rgba(16,185,129,0.2)]' };
-    case 'B': return { bg: 'bg-blue-500/10', border: 'border-blue-500/50', text: 'text-blue-400', glow: 'shadow-[0_0_20px_rgba(59,130,246,0.2)]' };
-    case 'C': return { bg: 'bg-amber-500/10', border: 'border-amber-500/50', text: 'text-amber-400', glow: 'shadow-[0_0_20px_rgba(245,158,11,0.2)]' };
-    case 'D': return { bg: 'bg-orange-500/10', border: 'border-orange-500/50', text: 'text-orange-400', glow: 'shadow-[0_0_20px_rgba(249,115,22,0.2)]' };
-    case 'F': return { bg: 'bg-red-500/10', border: 'border-red-500/50', text: 'text-red-400', glow: 'shadow-[0_0_20px_rgba(239,68,68,0.2)]' };
+    case 'A': return { bg: 'bg-grade-a/10', border: 'border-grade-a/50', text: 'text-grade-a', glow: 'shadow-[0_0_20px_rgba(16,185,129,0.2)]' };
+    case 'B': return { bg: 'bg-grade-b/10', border: 'border-grade-b/50', text: 'text-grade-b', glow: 'shadow-[0_0_20px_rgba(59,130,246,0.2)]' };
+    case 'C': return { bg: 'bg-grade-c/10', border: 'border-grade-c/50', text: 'text-grade-c', glow: 'shadow-[0_0_20px_rgba(245,158,11,0.2)]' };
+    case 'D': return { bg: 'bg-grade-d/10', border: 'border-grade-d/50', text: 'text-grade-d', glow: 'shadow-[0_0_20px_rgba(249,115,22,0.2)]' };
+    case 'F': return { bg: 'bg-grade-f/10', border: 'border-grade-f/50', text: 'text-grade-f', glow: 'shadow-[0_0_20px_rgba(239,68,68,0.2)]' };
     default: return { bg: 'bg-white/5', border: 'border-white/20', text: 'text-white/40', glow: '' };
   }
 }
@@ -25,7 +25,7 @@ export default function ClientCard({ client }: ClientCardProps) {
 
   return (
     <Link href={`/clients/${client.id}`}>
-      <div className="group w-full p-5 glass-card glass-card-hover text-left shadow-lg hover:shadow-xl hover:shadow-orange-500/10 cursor-pointer">
+      <div className="group w-full p-5 glass-card glass-card-hover text-left shadow-lg hover:shadow-xl hover:shadow-brand-500/10 cursor-pointer">
         <div className="flex items-start gap-4">
           {/* Grade badge */}
           <div className={`w-14 h-14 flex items-center justify-center rounded-xl border-2 font-bold text-xl backdrop-blur-sm shrink-0 ${gradeConfig.bg} ${gradeConfig.border} ${gradeConfig.text} ${gradeConfig.glow}`}>
@@ -33,7 +33,7 @@ export default function ClientCard({ client }: ClientCardProps) {
           </div>
 
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-white/95 truncate text-lg group-hover:text-amber-300 transition-colors">
+            <h3 className="font-semibold text-white/95 truncate text-lg group-hover:text-brand-300 transition-colors">
               {client.first_name} {client.last_initial}.
             </h3>
 
@@ -48,7 +48,7 @@ export default function ClientCard({ client }: ClientCardProps) {
               </div>
             )}
 
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-[rgba(251,146,60,0.15)]">
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-brand-500/15">
               <span className="text-xs text-white/50">
                 {client.review_count} review{client.review_count !== 1 ? 's' : ''}
               </span>

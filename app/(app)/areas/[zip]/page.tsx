@@ -97,7 +97,7 @@ export default function AreaDetailPage({ params }: { params: { zip: string } }) 
                   <span className="text-sm text-navy-300">{clients.length} clients</span>
                   {stats && <span className="text-sm text-navy-300">{stats.reviewCount} total reviews</span>}
                   {stats?.wouldWorkAgainPct !== null && stats?.wouldWorkAgainPct !== undefined && (
-                    <span className={`text-sm font-semibold ${stats.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : stats.wouldWorkAgainPct >= 40 ? 'text-amber-400' : 'text-red-400'}`}>
+                    <span className={`text-sm font-semibold ${stats.wouldWorkAgainPct >= 70 ? 'text-emerald-400' : stats.wouldWorkAgainPct >= 40 ? 'text-brand-400' : 'text-red-400'}`}>
                       {stats.wouldWorkAgainPct}% would work again
                     </span>
                   )}

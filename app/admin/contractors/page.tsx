@@ -18,7 +18,7 @@ interface ContractorRow {
 }
 
 const VERIFICATION_COLORS: Record<string, string> = {
-  pending: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+  pending: 'bg-brand-500/15 text-brand-400 border-brand-500/25',
   approved: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
   rejected: 'bg-red-500/15 text-red-400 border-red-500/25',
 };
@@ -60,7 +60,7 @@ export default function AdminContractorsPage() {
         <div className="glass-card p-12 text-center max-w-md">
           <h1 className="text-xl font-bold text-white mb-2">Access Denied</h1>
           <p className="text-gray-400 text-sm mb-4">You don&apos;t have admin access.</p>
-          <Link href="/dashboard" className="text-amber-400 text-sm">Go to Dashboard</Link>
+          <Link href="/dashboard" className="text-brand-400 text-sm">Go to Dashboard</Link>
         </div>
       </div>
     );
@@ -84,13 +84,13 @@ export default function AdminContractorsPage() {
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search by name, business, or state..."
-            className="w-full pl-11 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-amber-500/30 transition-all"
+            className="w-full pl-11 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500/30 transition-all"
           />
         </div>
         <select
           value={tradeFilter}
           onChange={e => setTradeFilter(e.target.value)}
-          className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500/30 transition-all"
+          className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-brand-500/30 transition-all"
         >
           <option value="all" className="bg-[#0f1419]">All Trades</option>
           {trades.map(t => <option key={t} value={t} className="bg-[#0f1419]">{t}</option>)}
@@ -124,7 +124,7 @@ export default function AdminContractorsPage() {
                   </div>
                 </div>
                 <div className="text-right shrink-0">
-                  <div className="text-sm font-semibold text-amber-400">{c.review_count}</div>
+                  <div className="text-sm font-semibold text-brand-400">{c.review_count}</div>
                   <div className="text-[10px] text-gray-600">reviews</div>
                   <div className="text-[10px] text-gray-600 mt-1">{new Date(c.created_at).toLocaleDateString()}</div>
                 </div>
