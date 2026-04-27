@@ -34,15 +34,29 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Single-segment paths like "/bozeman" or "/conifer" are public city
+  // landing pages (handled by app/[area]/page.tsx). Any single segment that
+  // isn't one of the known private app routes is treated as a candidate
+  // city slug; the page itself returns 404 if the slug doesn't resolve.
+  const PRIVATE_TOP_LEVEL = new Set([
+    'dashboard', 'search', 'review', 'compare', 'watchlist',
+    'areas', 'clients', 'account', 'onboarding', 'admin',
+    'verify', 'verification',
+  ]);
+  const path = request.nextUrl.pathname;
+  const segments = path.split('/').filter(Boolean);
+  const isCityPage = segments.length === 1 && !PRIVATE_TOP_LEVEL.has(segments[0]);
+
   // Redirect unauthenticated users to login (except auth pages and API routes)
-  const isPublicPage = request.nextUrl.pathname === '/' ||
-    request.nextUrl.pathname.startsWith('/login') ||
-    request.nextUrl.pathname.startsWith('/signup') ||
-    request.nextUrl.pathname.startsWith('/reset-password') ||
-    request.nextUrl.pathname.startsWith('/score/') ||
-    request.nextUrl.pathname.startsWith('/legal/') ||
-    request.nextUrl.pathname.startsWith('/api/v1/');
-  const isApiRoute = request.nextUrl.pathname.startsWith('/api');
+  const isPublicPage = path === '/' ||
+    path.startsWith('/login') ||
+    path.startsWith('/signup') ||
+    path.startsWith('/reset-password') ||
+    path.startsWith('/score/') ||
+    path.startsWith('/legal/') ||
+    path.startsWith('/api/v1/') ||
+    isCityPage;
+  const isApiRoute = path.startsWith('/api');
 
   if (!user && !isPublicPage && !isApiRoute) {
     const url = request.nextUrl.clone();
